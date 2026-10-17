@@ -9,7 +9,7 @@ function createWindow() {
     minHeight: 640,
     title: 'BAR 생산 계산기',
     backgroundColor: '#f5f7fb',
-    icon: path.join(__dirname, 'build', 'icon.png'),
+    icon: path.join(__dirname, 'icon.png'),
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
@@ -17,7 +17,7 @@ function createWindow() {
     },
     autoHideMenuBar: true
   });
-  win.loadFile(path.join(__dirname, 'app', 'index.html'));
+  win.loadFile(path.join(__dirname, 'index.html'));
   win.webContents.setWindowOpenHandler(() => ({ action: 'deny' }));
   win.webContents.on('will-navigate', event => event.preventDefault());
 }
