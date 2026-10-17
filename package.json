@@ -1,0 +1,33 @@
+{
+  "name": "bar-production-calculator",
+  "version": "1.0.0",
+  "description": "BAR 생산 계산기 - 시트 구성 및 생산량 계산",
+  "main": "main.js",
+  "author": "BAR Calculator",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist:win": "electron-builder --win nsis --x64"
+  },
+  "devDependencies": {
+    "electron": "^38.0.0",
+    "electron-builder": "^26.0.0"
+  },
+  "build": {
+    "appId": "kr.bar.productioncalculator",
+    "productName": "BAR 생산 계산기",
+    "directories": {"output": "dist", "buildResources": "build"},
+    "files": ["main.js", "app/**/*", "package.json"],
+    "asar": true,
+    "win": {"target": [{"target": "nsis", "arch": ["x64"]}], "icon": "build/icon.ico"},
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "BAR 생산 계산기",
+      "artifactName": "BAR-Calculator-Setup-${version}.${ext}",
+      "deleteAppDataOnUninstall": false
+    }
+  }
+}
