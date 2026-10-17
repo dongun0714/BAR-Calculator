@@ -16,8 +16,15 @@
   "build": {
     "appId": "kr.bar.productioncalculator",
     "productName": "BAR 생산 계산기",
-    "directories": {"output": "dist", "buildResources": "build"},
-    "files": ["main.js", "app/**/*", "package.json"],
+    "directories": {"output": "dist", "buildResources": "."},
+"files": [
+  "main.js",
+  "index.html",
+  "app.js",
+  "style.css",
+  "icon.png",
+  "package.json"
+],
     "asar": true,
     "win": {"target": [{"target": "nsis", "arch": ["x64"]}], "icon": "build/icon.ico"},
     "nsis": {
