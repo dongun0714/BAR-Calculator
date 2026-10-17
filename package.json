@@ -1,13 +1,13 @@
 {
   "name": "bar-production-calculator",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "BAR 생산 계산기 - 시트 구성 및 생산량 계산",
   "main": "main.js",
   "author": "BAR Calculator",
   "license": "MIT",
   "scripts": {
     "start": "electron .",
-    "dist:win": "electron-builder --win nsis --x64"
+    "dist:win": "electron-builder --win nsis --x64 --publish never"
   },
   "devDependencies": {
     "electron": "^38.0.0",
@@ -16,17 +16,30 @@
   "build": {
     "appId": "kr.bar.productioncalculator",
     "productName": "BAR 생산 계산기",
-    "directories": {"output": "dist", "buildResources": "."},
-"files": [
-  "main.js",
-  "index.html",
-  "app.js",
-  "style.css",
-  "icon.png",
-  "package.json"
-],
+    "directories": {
+      "output": "dist",
+      "buildResources": "."
+    },
+    "files": [
+      "main.js",
+      "index.html",
+      "app.js",
+      "style.css",
+      "icon.png",
+      "package.json"
+    ],
     "asar": true,
-    "win": {"target": [{"target": "nsis", "arch": ["x64"]}], "icon": "build/icon.ico"},
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "icon.ico"
+    },
     "nsis": {
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
